@@ -1,0 +1,25 @@
+div {
+  margin-top: 1rem;
+}
+
+button#add-item-btn {
+  margin: .5rem;
+}
+
+button.delete {
+  color: red;
+  background-color: white;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+span.completed {
+  text-decoration: line-through;
+}
+
+span:hover {
+  cursor: pointer;
+}
