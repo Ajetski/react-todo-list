@@ -47,11 +47,14 @@ const App: FC = () => {
   return (
     <>
       <button onClick={() => setOrdered(!ordered)}>Change List Type</button>
+      <button onClick={() => setList(list.filter((el) => !el.completed))}>
+        Delete Completed Items
+      </button>
       <div>
         <input
           onChange={(e) => setInput(e.target.value)}
           onKeyUp={(e) => {
-            if (e.key === "Enter") addButtonRef.current?.click();
+            if (e.key === "Enter") addItem();
           }}
           ref={addInputRef}
           type="text"
