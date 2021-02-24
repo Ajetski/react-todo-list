@@ -14,6 +14,11 @@ button.delete {
   color: red;
   background-color: white;
   border: none;
+  margin-left: .25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 button:hover {
