@@ -1,3 +1,8 @@
+body {
+  background-color: #070c1b;
+  color: white;
+}
+
 div {
   margin-top: 1rem;
 }
@@ -6,19 +11,23 @@ button#add-item-btn {
   margin: 0.5rem;
 }
 
-button {
-  margin-right: 0.5rem;
+button.delete {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transform: translateY(-15px);
+  height: 100%;
+  color: white;
+  background-color: red;
+  border: none;
+  float: right;
+  position: relative;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-right: 0;
 }
 
-button.delete {
-  color: red;
-  background-color: white;
-  border: none;
-  margin-left: .25rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+button {
+  margin-right: .5rem;
 }
 
 button:hover {
@@ -32,3 +41,14 @@ span.completed {
 span:hover {
   cursor: pointer;
 }
+
+li {
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 1rem;
+  padding-right: 0;
+}
+
+/* ul, li {
+  width: 100%;
+} */

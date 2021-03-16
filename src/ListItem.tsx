@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { useDrag } from 'react-use-gesture';
 
 export type ListItemType = {
 	text: string;
@@ -11,12 +12,15 @@ type ListItemProps = {
 	onClickDelete: VoidFunction
 }
 
-const ListItem: FC<ListItemProps> = ({item, onClickItem, onClickDelete}) => {
+const ListItem: FC<ListItemProps> = ({ item, onClickItem, onClickDelete }) => {
 	const [showDelete, setShowDelete] = useState(false);
-
+	const bind = useDrag(({offset: [x], dragging}) => {
+		if (!dragging) {
+			setShowDelete(x < 0);
+		}
+	});
 	return (
-		<li onMouseOver={() => setShowDelete(true)}
-			onMouseLeave={() => setShowDelete(false)}>
+		<li {...bind()}>
 			<span
 				onClick={onClickItem}
 				className={item.completed ? "completed" : "incomplete"}
@@ -27,7 +31,7 @@ const ListItem: FC<ListItemProps> = ({item, onClickItem, onClickDelete}) => {
 				<button
 					className="delete"
 					onClick={onClickDelete}>
-					✖
+					Delete
 				</button>
 			}
 		</li>
